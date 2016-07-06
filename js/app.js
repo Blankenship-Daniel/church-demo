@@ -18,7 +18,7 @@ PagePosition.prototype.draw = function() {
   container.css('width', $('.pageIndicator').outerWidth(true) * this.length);
 }
 
-function handleBreadcrumb() {
+function handlePageIndicator() {
   var pagesLength = $(".page").length;
   var activePage = $.mobile.activePage.attr('data-pagenum');
   var pagePos = new PagePosition(pagesLength, activePage);
@@ -26,9 +26,9 @@ function handleBreadcrumb() {
 }
 
 $(document).ready(function() {
-  handleBreadcrumb();
+  handlePageIndicator();
   $(document).on("pagechange", function(event) {
-    handleBreadcrumb();
+    handlePageIndicator();
   });
 
   var player = $('#choicesVideo');
